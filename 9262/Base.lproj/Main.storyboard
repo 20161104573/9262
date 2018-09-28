@@ -157,7 +157,7 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
-                        <outlet property="text" destination="pVq-HR-MSM" id="0qB-dV-yQY"/>
+                        <outlet property="show" destination="pVq-HR-MSM" id="tds-DD-RjN"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
