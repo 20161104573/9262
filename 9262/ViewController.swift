@@ -7,58 +7,225 @@
 //
 
 import UIKit
-
+var number=0 //判断加减乘除
+var jude=0  //决定输出数字的位置
+var x=0
+var result=""
+var exist=0
 class ViewController: UIViewController {
-
-    
+   
     @IBOutlet weak var show: UITextField!
     @IBAction func zer0(_ sender: Any) {
-        show.text="0"
+        if show.text == ""{
+            
+            show.text = ""
+            
+        }else{
+            
+            show.text = show.text! + "0"
+        }
     }
-    @IBAction func Delete(_ sender: Any) {
-        //show.text=""
+    
+ 
+    @IBAction func clear(_ sender: Any) {
+        if exist == 0
+        {
+            show.text = ""
+          }
+        else{
+             exist=1
+        }
     }
     @IBAction func equal(_ sender: Any) {
-        show.text="="
+        let a = Double(result)!
+        let b = Double(show.text!)!
+        var c = Double(show.text!)!
+        if number==1{
+            c=a+b
+            show.text=String(c)
+        }
+        else
+        if number==2{
+            c=a-b
+            show.text=String(c)
+        }
+        else
+        if number==3{
+            c=a*b
+            show.text=String(c)
+        }
+        else
+        if number==4{
+            c=a/(b)
+            show.text=String(c)
+        }
+        //else {
+         //  show.text=Double(format:"%lf", c)
+       // }
     }
+    
     @IBAction func one(_ sender: Any) {
-        show.text="1"
+        show.text = show.text! + "1"
     }
     @IBAction func two(_ sender: Any) {
-        show.text="2"
+       show.text = show.text! + "2"
     }
     @IBAction func three(_ sender: Any) {
-        show.text="3"
+       show.text = show.text! + "3"
     }
     @IBAction func four(_ sender: Any) {
-        show.text="4"
+       show.text = show.text! + "4"
     }
     @IBAction func five(_ sender: Any) {
-        show.text="5"
+        show.text = show.text! + "5"
     }
     @IBAction func six(_ sender: Any) {
-        show.text="6"
+        show.text = show.text! + "6"
     }
     @IBAction func seven(_ sender: Any) {
-        show.text="7"
+        show.text = show.text! + "7"
     }
     @IBAction func eight(_ sender: Any) {
-        show.text="8"
+       show.text = show.text! + "8"
     }
     @IBAction func nine(_ sender: Any) {
-        show.text="9"
+      show.text = show.text! + "9"
     }
     @IBAction func add(_ sender: Any) {
-        show.text="+"
+        if x == 1{
+            let a = Double(show.text!)!
+            
+            let b = Double(show.text!)!
+            
+            let c = a + b
+            
+           // show.text = Double(c)
+            result = String(c)
+            show.text = ""
+            
+            number = 1
+        }
+        else{
+            
+            if show.text == ""{
+                
+                show.text = "0"
+                
+            }else {
+                
+                let x = Double(show.text!)!
+                
+                result = String(x)
+                
+                show.text = ""
+                
+                number = 1
+                
+            }
+            
+        }
     }
     @IBAction func reduction(_ sender: Any) {
-        show.text="-"
+        if x == 1{
+            let a = Double(show.text!)!
+            
+            let b = Double(show.text!)!
+            
+            let c = a - b
+            
+            // show.text = Double(c)
+            result = String(c)
+            show.text = ""
+            
+            number = 2
+        }
+        else{
+            
+            if show.text == ""{
+                
+                show.text = "0"
+                
+            }else {
+                
+                let x = Double(show.text!)!
+                
+                result = String(x)
+                
+                show.text = ""
+                
+                number = 2
+                
+            }
+            
+        }
     }
     @IBAction func take(_ sender: Any) {
-        show.text="*"
+        if x == 1{
+            let a = Double(show.text!)!
+            
+            let b = Double(show.text!)!
+            
+            let c = a * b
+            
+            // show.text = Double(c)
+            result = String(c)
+            show.text = ""
+            
+            number = 3
+        }
+        else{
+            
+            if show.text == ""{
+                
+                show.text = "0"
+                
+            }else {
+                
+                let x = Double(show.text!)!
+                
+                result = String(x)
+                
+                show.text = ""
+                
+                number = 3
+                
+            }
+            
+        }
     }
     @IBAction func addition(_ sender: Any) {
-        show.text="/"
+        if x == 1{
+            let a = Double(show.text!)!
+            
+            let b = Double(show.text!)!
+            
+            let c = a / b
+            
+            // show.text = Double(c)
+            result = String(c)
+            show.text = ""
+            
+            number = 4
+        }
+        else{
+            
+            if show.text == ""{
+                
+                show.text = "0"
+                
+            }else {
+                
+                let x = Double(show.text!)!
+                
+                result = String(x)
+                
+                show.text = ""
+                
+                number = 4
+                
+            }
+            
+        }
     }
     override func viewDidLoad() {
         super.viewDidLoad()
