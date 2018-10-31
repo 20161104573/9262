@@ -12,6 +12,7 @@ var jude=0  //决定输出数字的位置
 var x=0
 var result=""
 var exist=0
+var po=0
 class ViewController: UIViewController {
    
     @IBOutlet weak var show: UITextField!
@@ -59,9 +60,6 @@ class ViewController: UIViewController {
             c=a/(b)
             show.text=String(c)
         }
-        //else {
-         //  show.text=Double(format:"%lf", c)
-       // }
     }
     
     @IBAction func one(_ sender: Any) {
@@ -99,7 +97,6 @@ class ViewController: UIViewController {
             
             let c = a + b
             
-           // show.text = Double(c)
             result = String(c)
             show.text = ""
             
@@ -133,7 +130,6 @@ class ViewController: UIViewController {
             
             let c = a - b
             
-            // show.text = Double(c)
             result = String(c)
             show.text = ""
             
@@ -167,7 +163,6 @@ class ViewController: UIViewController {
             
             let c = a * b
             
-            // show.text = Double(c)
             result = String(c)
             show.text = ""
             
@@ -201,10 +196,8 @@ class ViewController: UIViewController {
             
             let c = a / b
             
-            // show.text = Double(c)
             result = String(c)
             show.text = ""
-            
             number = 4
         }
         else{
@@ -225,6 +218,15 @@ class ViewController: UIViewController {
                 
             }
             
+        }
+    }
+    
+    @IBAction func point(_ sender: Any) {
+        if po == 0{
+            show.text=show.text!+"."
+        }
+        else{
+            show.text=show.text
         }
     }
     override func viewDidLoad() {
