@@ -13,6 +13,9 @@ var x=0
 var result=""
 var exist=0
 var po=0
+var a = 0.0
+var b = 0.0
+var c = 0.0
 class ViewController: UIViewController {
    
     @IBOutlet weak var show: UITextField!
@@ -35,31 +38,34 @@ class ViewController: UIViewController {
           }
         else{
              exist=1
+            
+             po=0
         }
     }
     @IBAction func equal(_ sender: Any) {
-        let a = Double(result)!
-        let b = Double(show.text!)!
-        var c = Double(show.text!)!
+        a = Double(result)!
+        b = Double(show.text!)!
+        c = Double(show.text!)!
         if number==1{
             c=a+b
-            show.text=String(c)
+            show.text=String(format:"%.2lf",c)
         }
-        else
-        if number==2{
+        else if number==2{
             c=a-b
-            show.text=String(c)
+            show.text=String(format:"%.2lf",c)
         }
-        else
-        if number==3{
+        else if number==3{
             c=a*b
-            show.text=String(c)
+            show.text=String(format:"%.2lf",c)
         }
-        else
-        if number==4{
+        else if number==4{
             c=a/(b)
-            show.text=String(c)
+            show.text=String(format:"%.2lf",c)
+            //if b=0{
+                //show.text=show.text!+"不能除以0"
+              //}
         }
+        po = 0
     }
     
     @IBAction func one(_ sender: Any) {
@@ -91,16 +97,18 @@ class ViewController: UIViewController {
     }
     @IBAction func add(_ sender: Any) {
         if x == 1{
-            let a = Double(show.text!)!
+            a = Double(show.text!)!
             
-            let b = Double(show.text!)!
-            
-            let c = a + b
+            b = Double(show.text!)!
+     
+            c = a + b
             
             result = String(c)
+            
             show.text = ""
             
             number = 1
+
         }
         else{
             
@@ -117,6 +125,8 @@ class ViewController: UIViewController {
                 show.text = ""
                 
                 number = 1
+
+                po=0
                 
             }
             
@@ -124,16 +134,18 @@ class ViewController: UIViewController {
     }
     @IBAction func reduction(_ sender: Any) {
         if x == 1{
-            let a = Double(show.text!)!
+            a = Double(show.text!)!
             
-            let b = Double(show.text!)!
-            
-            let c = a - b
+            b = Double(show.text!)!
+           
+            c = a - b
             
             result = String(c)
+            
             show.text = ""
             
             number = 2
+
         }
         else{
             
@@ -151,22 +163,26 @@ class ViewController: UIViewController {
                 
                 number = 2
                 
+                po=0
+
             }
             
         }
     }
     @IBAction func take(_ sender: Any) {
         if x == 1{
-            let a = Double(show.text!)!
+            a = Double(show.text!)!
             
-            let b = Double(show.text!)!
-            
-            let c = a * b
+            b = Double(show.text!)!
+        
+            c = a * b
             
             result = String(c)
+            
             show.text = ""
             
             number = 3
+      
         }
         else{
             
@@ -183,6 +199,8 @@ class ViewController: UIViewController {
                 show.text = ""
                 
                 number = 3
+
+                po=0
                 
             }
             
@@ -190,15 +208,18 @@ class ViewController: UIViewController {
     }
     @IBAction func addition(_ sender: Any) {
         if x == 1{
-            let a = Double(show.text!)!
+            a = Double(show.text!)!
             
-            let b = Double(show.text!)!
-            
-            let c = a / b
+            b = Double(show.text!)!
+          
+            c = a / b
             
             result = String(c)
+            
             show.text = ""
+            
             number = 4
+   
         }
         else{
             
@@ -206,7 +227,9 @@ class ViewController: UIViewController {
                 
                 show.text = "0"
                 
-            }else {
+               }
+            
+            else {
                 
                 let x = Double(show.text!)!
                 
@@ -216,6 +239,8 @@ class ViewController: UIViewController {
                 
                 number = 4
                 
+                po=0
+
             }
             
         }
@@ -223,10 +248,16 @@ class ViewController: UIViewController {
     
     @IBAction func point(_ sender: Any) {
         if po == 0{
+            
             show.text=show.text!+"."
+            
+            po=1
         }
+        
         else{
+            
             show.text=show.text
+   
         }
     }
     override func viewDidLoad() {
