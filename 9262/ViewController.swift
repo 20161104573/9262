@@ -8,9 +8,6 @@
 
 import UIKit
 var number=0 //判断加减乘除
-var jude=0  //决定输出数字的位置
-var x=0
-var result=""
 var exist=0
 var po=0
 var a = 0.0
@@ -43,27 +40,30 @@ class ViewController: UIViewController {
         }
     }
     @IBAction func equal(_ sender: Any) {
-        a = Double(result)!
-        b = Double(show.text!)!
-        c = Double(show.text!)!
         if number==1{
+            b = Double(show.text!)!
             c=a+b
             show.text=String(format:"%.2lf",c)
         }
         else if number==2{
+            b = Double(show.text!)!
             c=a-b
             show.text=String(format:"%.2lf",c)
         }
         else if number==3{
+            b = Double(show.text!)!
             c=a*b
             show.text=String(format:"%.2lf",c)
         }
         else if number==4{
-            c=a/(b)
-            show.text=String(format:"%.2lf",c)
-            //if b=0{
-                //show.text=show.text!+"不能除以0"
-              //}
+            if b==0{
+                show.text="不能除以0"
+              }
+            else{
+                b = Double(show.text!)!
+                c=a/(b)
+                show.text=String(format:"%.2lf",c)
+            }
         }
         po = 0
     }
@@ -96,154 +96,32 @@ class ViewController: UIViewController {
       show.text = show.text! + "9"
     }
     @IBAction func add(_ sender: Any) {
-        if x == 1{
-            a = Double(show.text!)!
-            
-            b = Double(show.text!)!
-     
-            c = a + b
-            
-            result = String(c)
-            
-            show.text = ""
-            
-            number = 1
-
-        }
-        else{
-            
-            if show.text == ""{
-                
-                show.text = "0"
-                
-            }else {
-                
-                let x = Double(show.text!)!
-                
-                result = String(x)
-                
-                show.text = ""
-                
-                number = 1
-
-                po=0
-                
-            }
-            
-        }
+        a = Double(show.text!)!
+        show.text = ""
+        number=1
+        po=0
+        
     }
     @IBAction func reduction(_ sender: Any) {
-        if x == 1{
-            a = Double(show.text!)!
-            
-            b = Double(show.text!)!
-           
-            c = a - b
-            
-            result = String(c)
-            
-            show.text = ""
-            
-            number = 2
+        a = Double(show.text!)!
+        show.text = ""
+        number = 2
+        po = 0
 
-        }
-        else{
-            
-            if show.text == ""{
-                
-                show.text = "0"
-                
-            }else {
-                
-                let x = Double(show.text!)!
-                
-                result = String(x)
-                
-                show.text = ""
-                
-                number = 2
-                
-                po=0
-
-            }
-            
-        }
     }
     @IBAction func take(_ sender: Any) {
-        if x == 1{
-            a = Double(show.text!)!
-            
-            b = Double(show.text!)!
+        a = Double(show.text!)!
+        show.text = ""
+        number = 3
+        po = 0
         
-            c = a * b
-            
-            result = String(c)
-            
-            show.text = ""
-            
-            number = 3
-      
-        }
-        else{
-            
-            if show.text == ""{
-                
-                show.text = "0"
-                
-            }else {
-                
-                let x = Double(show.text!)!
-                
-                result = String(x)
-                
-                show.text = ""
-                
-                number = 3
-
-                po=0
-                
-            }
-            
-        }
     }
     @IBAction func addition(_ sender: Any) {
-        if x == 1{
-            a = Double(show.text!)!
-            
-            b = Double(show.text!)!
-          
-            c = a / b
-            
-            result = String(c)
-            
-            show.text = ""
-            
-            number = 4
-   
-        }
-        else{
-            
-            if show.text == ""{
-                
-                show.text = "0"
-                
-               }
-            
-            else {
-                
-                let x = Double(show.text!)!
-                
-                result = String(x)
-                
-                show.text = ""
-                
-                number = 4
-                
-                po=0
-
-            }
-            
-        }
+        a = Double(show.text!)!
+        show.text = ""
+        number = 4
+        po = 0
+       
     }
     
     @IBAction func point(_ sender: Any) {
