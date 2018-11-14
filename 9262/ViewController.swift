@@ -40,6 +40,9 @@ class ViewController: UIViewController {
         }
     }
     @IBAction func equal(_ sender: Any) {
+        if show.text == ""{
+            show.text = ""
+        }
         if number==1{
             b = Double(show.text!)!
             c=a+b
@@ -96,31 +99,51 @@ class ViewController: UIViewController {
       show.text = show.text! + "9"
     }
     @IBAction func add(_ sender: Any) {
-        a = Double(show.text!)!
-        show.text = ""
-        number=1
-        po=0
+        if show.text == ""{
+            show.text = ""
+        }
+        else{
+            a = Double(show.text!)!
+            show.text = ""
+            number = 1
+            po = 0
+        }
         
     }
     @IBAction func reduction(_ sender: Any) {
-        a = Double(show.text!)!
-        show.text = ""
-        number = 2
-        po = 0
+        if show.text == ""{
+            show.text = ""
+        }
+        else{
+            a = Double(show.text!)!
+            show.text = ""
+            number = 2
+            po = 0
+        }
 
     }
     @IBAction func take(_ sender: Any) {
-        a = Double(show.text!)!
-        show.text = ""
-        number = 3
-        po = 0
+        if show.text == ""{
+            show.text = ""
+        }
+        else{
+            a = Double(show.text!)!
+            show.text = ""
+            number = 3
+            po = 0
+        }
         
     }
     @IBAction func addition(_ sender: Any) {
-        a = Double(show.text!)!
-        show.text = ""
-        number = 4
-        po = 0
+        if show.text == ""{
+            show.text = ""
+        }
+        else{
+            a = Double(show.text!)!
+            show.text = ""
+            number = 4
+            po = 0
+        }
        
     }
     
