@@ -13,64 +13,11 @@ var po=0
 var a = 0.0
 var b = 0.0
 var c = 0.0
+var p = 0.0
+var s = 0.0
 class ViewController: UIViewController {
    
     @IBOutlet weak var show: UITextField!
-    @IBAction func zer0(_ sender: Any) {
-        if show.text == ""{
-            
-            show.text = ""
-            
-        }else{
-            
-            show.text = show.text! + "0"
-        }
-    }
-    
- 
-    @IBAction func clear(_ sender: Any) {
-        if exist == 0
-        {
-            show.text = ""
-          }
-        else{
-             exist=1
-            
-             po=0
-        }
-    }
-    @IBAction func equal(_ sender: Any) {
-        if show.text == ""{
-            show.text = ""
-        }
-        if number==1{
-            b = Double(show.text!)!
-            c=a+b
-            show.text=String(format:"%.2lf",c)
-        }
-        else if number==2{
-            b = Double(show.text!)!
-            c=a-b
-            show.text=String(format:"%.2lf",c)
-        }
-        else if number==3{
-            b = Double(show.text!)!
-            c=a*b
-            show.text=String(format:"%.2lf",c)
-        }
-        else if number==4{
-            if b==0{
-                show.text="不能除以0"
-              }
-            else{
-                b = Double(show.text!)!
-                c=a/(b)
-                show.text=String(format:"%.2lf",c)
-            }
-        }
-        po = 0
-    }
-    
     @IBAction func one(_ sender: Any) {
         show.text = show.text! + "1"
     }
@@ -98,6 +45,52 @@ class ViewController: UIViewController {
     @IBAction func nine(_ sender: Any) {
       show.text = show.text! + "9"
     }
+  
+    @IBAction func zer0(_ sender: Any) {
+        show.text = show.text! + "0"
+    }
+    
+    
+    @IBAction func clear(_ sender: Any) {
+        if exist == 0
+        {
+            show.text = ""
+        }
+        else{
+            exist=1
+            
+            po=0
+        }
+    }
+    @IBAction func equal(_ sender: Any){
+            if number==1{
+                b = Double(show.text!)!
+                c=a+b
+                show.text=String(format:"%.2lf",c)
+            }
+            else if number==2{
+                b = Double(show.text!)!
+                c=a-b
+                show.text=String(format:"%.2lf",c)
+            }
+            else if number==3{
+                b = Double(show.text!)!
+                c=a*b
+                show.text=String(format:"%.2lf",c)
+            }
+            else if number==4{
+                if show.text == "0"{
+                    show.text = "0不能作除数"
+                }
+                else{
+                    b = Double(show.text!)!
+                    c=a/b
+                    show.text=String(format:"%.2lf",c)
+                }
+        }
+        po = 0
+    }
+    
     @IBAction func add(_ sender: Any) {
         if show.text == ""{
             show.text = ""
@@ -108,7 +101,6 @@ class ViewController: UIViewController {
             number = 1
             po = 0
         }
-        
     }
     @IBAction func reduction(_ sender: Any) {
         if show.text == ""{
@@ -147,6 +139,28 @@ class ViewController: UIViewController {
        
     }
     
+    @IBAction func square(_ sender: Any) {
+        if show.text == ""{
+            show.text=show.text!+""
+        }
+        else {
+            s = Double(show.text!)!
+            s = s * s
+            show.text=String(s)
+        }
+        po = 0
+    }
+    @IBAction func percent(_ sender: Any) {
+        if show.text == ""{
+            show.text=show.text!+""
+        }
+        else {
+            p = Double(show.text!)!
+            p = p * 0.01
+            show.text=String(p)
+        }
+        po = 0
+    }
     @IBAction func point(_ sender: Any) {
         if po == 0{
             
@@ -159,6 +173,14 @@ class ViewController: UIViewController {
             
             show.text=show.text
    
+        }
+    }
+    @IBAction func minus(_ sender: Any) {
+        if show.text == ""{
+            show.text=show.text!+"-"
+        }
+        else{
+            show.text=show.text!+"-"
         }
     }
     override func viewDidLoad() {
