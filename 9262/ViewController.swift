@@ -66,17 +66,17 @@ class ViewController: UIViewController {
             if number==1{
                 b = Double(show.text!)!
                 c=a+b
-                show.text=String(format:"%.2lf",c)
+                show.text = String(a) + "+" + String(b) + "=" + String(format:"%.2lf",c)
             }
             else if number==2{
                 b = Double(show.text!)!
                 c=a-b
-                show.text=String(format:"%.2lf",c)
+                show.text = String(a) + "-" + String(b) + "=" + String(format:"%.2lf",c)
             }
             else if number==3{
                 b = Double(show.text!)!
                 c=a*b
-                show.text=String(format:"%.2lf",c)
+                show.text = String(a) + "*" + String(b) + "=" + String(format:"%.2lf",c)
             }
             else if number==4{
                 if show.text == "0"{
@@ -85,7 +85,7 @@ class ViewController: UIViewController {
                 else{
                     b = Double(show.text!)!
                     c=a/b
-                    show.text=String(format:"%.2lf",c)
+                    show.text = String(a) + "÷" + String(b) + "=" + String(format:"%.2lf",c)
                 }
         }
         po = 0

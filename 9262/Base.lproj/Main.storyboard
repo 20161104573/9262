@@ -186,7 +186,7 @@
                                 <rect key="frame" x="263" y="290" width="48" height="48"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="0.4126539179" alpha="1" colorSpace="calibratedWhite"/>
-                                <state key="normal" title="/">
+                                <state key="normal" title="÷">
                                     <color key="titleColor" red="0.69826748704663211" green="0.15240207261149269" blue="0.07083371787060419" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
